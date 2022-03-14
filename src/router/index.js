@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import root from '@/views/root'
-import home from '@/views/home'
-import pms from '@/views/pms'
-import notFound from '@/views/notFound'
+import root from '../views/root'
+import home from '../views/home'
+import category from '../views/product/category'
+import notFound from '../views/notFound'
 
 Vue.use(Router)
 
@@ -22,14 +22,14 @@ export const routes = [
       },
       {
         path: 'pms',
-        name: 'pms',
-        redirect: 'pms/product_list',
-        component: pms,
+        name: 'category',
+        redirect: 'pms/category',
+        component: category,
         meta: {},
         children: [{
-          path: 'product_list',
-          name: 'product_list',
-          component: () => import('@/views/pms')
+          path: 'category',
+          name: 'category',
+          component: () => import('../views/product/category')
         }]
       }
     ]
